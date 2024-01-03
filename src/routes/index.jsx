@@ -6,6 +6,8 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AdminLayout from "../components/layout/AdminLayout";
 import AddService from "../Pages/AddService";
+import Services from "../Pages/Services";
+import Home from "../Pages/Home";
 
 
 const routes = createBrowserRouter([
@@ -14,12 +16,20 @@ const routes = createBrowserRouter([
     element:<App/>,
     children:[
         {
+            index:true,
+            element:<Home/>
+        },
+        {
             path:'about',
             element:<About/>
         },
         {
             path:'contact',
             element:<Contact/>
+        },
+        {
+            path:'services',
+            element:<Services/>
         },
     ]
     },
@@ -36,7 +46,7 @@ const routes = createBrowserRouter([
         element:<AdminLayout/>,
         children:[
             {
-                path:'addService',
+                index:true,
                 element:<AddService/>
             }
         ]
